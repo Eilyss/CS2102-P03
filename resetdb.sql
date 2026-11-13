@@ -65,7 +65,6 @@ BEGIN;
     VALUES ('ADIU4974982', 0, 0, 1, 'Y');
 COMMIT;
 
-
 -- operation 7
 DELETE FROM ship WHERE mmsi = '211382280';
 
@@ -94,4 +93,32 @@ BEGIN;
 COMMIT;
 
 -- additional data 1
+BEGIN;
+    INSERT INTO container(iso_6346, content, company_code)
+    VALUES ('ADIU2345489', 'plushies', 'ADI');
+    INSERT INTO loaded_on (iso_6346, mmsi) 
+    VALUES ('ADIU2345489', '255806008');
+    INSERT INTO container(iso_6346, content, company_code)
+    VALUES ('ADIU6709357', 'rams', 'ADI');
+    INSERT INTO loaded_on (iso_6346, mmsi) 
+    VALUES ('ADIU6709357', '255806008');
+    INSERT INTO container(iso_6346, content, company_code)
+    VALUES ('ADIU5837752', 'the constitution', 'ADI');
+    INSERT INTO loaded_on (iso_6346, mmsi) 
+    VALUES ('ADIU5837752', '255806008');
+COMMIT;
 
+BEGIN;
+    INSERT INTO container(iso_6346, content, company_code)
+    VALUES ('ADIU9767874', 'pianos', 'ADI');
+    INSERT INTO stored_at (iso_6346, bay, row, tier, code) 
+    VALUES ('ADIU9767874', 1, 1, 1, 'Y');
+    INSERT INTO container(iso_6346, content, company_code)
+    VALUES ('ADIU7434763', 'debt', 'ADI');
+    INSERT INTO stored_at (iso_6346, bay, row, tier, code) 
+    VALUES ('ADIU7434763', 1, 1, 2, 'Y');
+    INSERT INTO container(iso_6346, content, company_code)
+    VALUES ('ADIU5734663', 'my sanity', 'ADI');
+    INSERT INTO stored_at (iso_6346, bay, row, tier, code) 
+    VALUES ('ADIU5734663', 1, 1, 3, 'Y');
+COMMIT;
